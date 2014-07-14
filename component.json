@@ -13,13 +13,15 @@
         "serandomps/auto-search": "master",
         "serandomps/breadcrumb": "master",
         "serandomps/hub-navigation": "master",
+        "serandomps/hub-drones": "master",
+        "serandomps/hub-domains": "master",
         "serandomps/upload": "master",
         "serandomps/user-login": "master",
         "serandomps/user-register": "master"
     },
     "scripts": ["boot.js"],
     "styles": ["nunito.css", "oxygen.css", "boot.css"],
-    "templates": ["component.json", "single-column.html", "two-column.html", "three-column.html"],
+    "templates": ["component.json", "one-column.html", "two-column.html", "three-column.html"],
     "images": [
         "images/logo.png",
         "images/logo@2x.png"

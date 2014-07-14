@@ -15,7 +15,7 @@ require('upload');
 serand.init(require);
 
 page('/login', function (ctx) {
-    layout('single-column')
+    layout('one-column')
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
@@ -28,39 +28,36 @@ pager('*', function (ctx, next) {
 });
 
 page('/', function (ctx) {
-    layout('two-column')
-        .area('#header')
-        .add('hub-navigation')
-        .add('breadcrumb')
-        .area('#right')
-        .add('auto-search')
-        .area('#middle')
-        .render();
-});
-
-page('/vehicles/:id', function (ctx) {
-    layout('single-column')
+    layout('one-column')
         .area('#header')
         .add('hub-navigation')
         .add('breadcrumb')
         .area('#middle')
-        .add('auto-details', {
-            id: ctx.params.id
-        })
+        .add('hub-drones')
         .render();
 });
 
-page('/register', function (ctx) {
-    layout('single-column')
+page('/domains', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .add('breadcrumb')
+        .area('#middle')
+        .add('hub-domains')
+        .render();
+});
+
+page('/drones', function (ctx) {
+    layout('one-column')
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
-        .add('user-register')
+        .add('hub-drones')
         .render();
 });
 
 page('/add', function (ctx) {
-    layout('single-column')
+    layout('one-column')
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
