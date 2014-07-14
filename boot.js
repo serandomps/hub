@@ -3,12 +3,29 @@ var dust = require('dust')();
 
 var serand = require('serand');
 var page = serand.page;
+var redirect = serand.redirect;
+var current = serand.current;
 var layout = serand.layout(require);
+
+var user;
 
 //registering jquery, bootstrap etc. plugins
 require('upload');
 //init app
 serand.init(require);
+
+page('/login', function (ctx) {
+    layout('single-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('user-login')
+        .render();
+});
+
+pager('*', function (ctx, next) {
+    user ? next() : redirect('/login');
+});
 
 page('/', function (ctx) {
     layout('two-column')
@@ -33,15 +50,6 @@ page('/vehicles/:id', function (ctx) {
         .render();
 });
 
-page('/login', function (ctx) {
-    layout('single-column')
-        .area('#header')
-        .add('hub-navigation')
-        .area('#middle')
-        .add('user-login')
-        .render();
-});
-
 page('/register', function (ctx) {
     layout('single-column')
         .area('#header')
@@ -63,13 +71,15 @@ page('/add', function (ctx) {
 pager();
 
 serand.on('user', 'login', function (data) {
+    user = data;
     var ctx = current('/:action?val=?');
     console.log(ctx);
-    pager('/');
+    redirect('/');
 });
 
 serand.on('user', 'logout', function (data) {
-    pager('/');
+    user = null;
+    redirect('/');
 });
 
 serand.emit('boot', 'init');
