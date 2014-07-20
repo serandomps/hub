@@ -37,6 +37,16 @@ page('/', function (ctx) {
         .render();
 });
 
+page('/servers', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .add('breadcrumb')
+        .area('#middle')
+        .add('hub-servers')
+        .render();
+});
+
 page('/domains', function (ctx) {
     layout('one-column')
         .area('#header')
@@ -51,6 +61,7 @@ page('/drones', function (ctx) {
     layout('one-column')
         .area('#header')
         .add('hub-navigation')
+        .add('breadcrumb')
         .area('#middle')
         .add('hub-drones')
         .render();
@@ -71,7 +82,7 @@ serand.on('user', 'login', function (data) {
     user = data;
     var ctx = current('/:action?val=?');
     console.log(ctx);
-    redirect('/');
+    redirect('/servers');
 });
 
 serand.on('user', 'logout', function (data) {
