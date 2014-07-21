@@ -31,9 +31,8 @@ page('/', function (ctx) {
     layout('one-column')
         .area('#header')
         .add('hub-navigation')
-        .add('breadcrumb')
         .area('#middle')
-        .add('hub-drones')
+        .add('hub-servers')
         .render();
 });
 
@@ -41,9 +40,30 @@ page('/servers', function (ctx) {
     layout('one-column')
         .area('#header')
         .add('hub-navigation')
-        .add('breadcrumb')
         .area('#middle')
         .add('hub-servers')
+        .render();
+});
+
+page('/servers/:id', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-server-details', {
+            id: ctx.params.id
+        })
+        .render();
+});
+
+page('/servers/:id/update', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-server-details', {
+            id: ctx.params.id
+        })
         .render();
 });
 
@@ -51,7 +71,6 @@ page('/domains', function (ctx) {
     layout('one-column')
         .area('#header')
         .add('hub-navigation')
-        .add('breadcrumb')
         .area('#middle')
         .add('hub-domains')
         .render();
@@ -61,7 +80,6 @@ page('/drones', function (ctx) {
     layout('one-column')
         .area('#header')
         .add('hub-navigation')
-        .add('breadcrumb')
         .area('#middle')
         .add('hub-drones')
         .render();
