@@ -72,11 +72,36 @@ page('/domains', function (ctx) {
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
-        .add('hub-domains')
+        .add('hub-domains', {
+            action: 'list'
+        })
         .render();
 });
 
-page('/drones', function (ctx) {
+page('/domains/add', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-domains', {
+            action: 'add'
+        })
+        .render();
+});
+
+page('/domains/:id', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-domains', {
+            action: 'details',
+            id: ctx.params.id
+        })
+        .render();
+});
+
+page('/domains/:id/drones', function (ctx) {
     layout('one-column')
         .area('#header')
         .add('hub-navigation')
