@@ -106,7 +106,9 @@ page('/domains/:id/drones', function (ctx) {
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
-        .add('hub-drones')
+        .add('hub-drones', {
+            id: ctx.params.id
+        })
         .render();
 });
 
