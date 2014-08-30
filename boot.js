@@ -45,6 +45,15 @@ page('/servers', function (ctx) {
         .render();
 });
 
+page('/hub', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-self')
+        .render();
+});
+
 page('/servers/:id', function (ctx) {
     layout('one-column')
         .area('#header')
