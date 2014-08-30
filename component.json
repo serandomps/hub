@@ -27,7 +27,7 @@
         "serandomps/hub-drones": "master",
         "serandomps/hub-domains": "master",
         "serandomps/hub-servers": "master",
-        "serandomps/hub-self1": "master",
+        "serandomps/hub-self": "master",
         "serandomps/hub-agent": "master",
         "serandomps/hub-server-details": "master",
         "serandomps/upload": "master",
