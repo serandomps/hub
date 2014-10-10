@@ -130,6 +130,40 @@ page('/add', function (ctx) {
         .render();
 });
 
+page('/configs', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-configs', {
+            action: 'list'
+        })
+        .render();
+});
+
+page('/configs/add', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-configs', {
+            action: 'add'
+        })
+        .render();
+});
+
+page('/configs/:id', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-configs', {
+            action: 'details',
+            id: ctx.params.id
+        })
+        .render();
+});
+
 pager();
 
 serand.on('user', 'login', function (data) {
