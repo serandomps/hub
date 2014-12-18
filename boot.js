@@ -166,14 +166,14 @@ page('/configs/:id', function (ctx) {
 
 pager();
 
-serand.on('user', 'login', function (data) {
+serand.on('user', 'logged in', function (data) {
     user = data;
     var ctx = current('/:action?val=?');
     console.log(ctx);
     redirect('/servers');
 });
 
-serand.on('user', 'logout', function (data) {
+serand.on('user', 'logged out', function (data) {
     user = null;
     redirect('/');
 });
