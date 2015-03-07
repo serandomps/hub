@@ -1,24 +1,6 @@
 {
     "name": "hub",
     "description": "hub",
-    "serand": [
-        "async",
-        "dust",
-        "serand",
-        "breadcrumb",
-        "navigation",
-        "hub-navigation",
-        "hub-drones",
-        "hub-domains",
-        "hub-configs",
-        "hub-servers",
-        "hub-self",
-        "hub-agent",
-        "hub-server-details",
-        "upload",
-        "user-login",
-        "user-register"
-    ],
     "dependencies": {
         "visionmedia/page.js": "*",
         "serandomps/async": "master",

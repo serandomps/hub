@@ -7,6 +7,26 @@ var redirect = serand.redirect;
 var current = serand.current;
 var layout = serand.layout('serandomps~hub@master');
 
+require('hub-agent');
+/*"serand": [
+    "async",
+    "dust",
+    "serand",
+    "breadcrumb",
+    "navigation",
+    "hub-navigation",
+    "hub-drones",
+    "hub-domains",
+    "hub-configs",
+    "hub-servers",
+    "hub-self",
+    "hub-agent",
+    "hub-server-details",
+    "upload",
+    "user-login",
+    "user-register"
+],*/
+
 var user;
 
 //registering jquery, bootstrap etc. plugins
