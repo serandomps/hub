@@ -8,6 +8,7 @@ var current = serand.current;
 var layout = serand.layout('serandomps~hub@master');
 
 require('hub-agent');
+require('hub-domains');
 /*"serand": [
     "async",
     "dust",
