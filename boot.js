@@ -1,4 +1,3 @@
-var pager = require('page');
 var dust = require('dust')();
 
 var serand = require('serand');
@@ -9,24 +8,6 @@ var layout = serand.layout('serandomps~hub@master');
 
 require('hub-agent');
 require('hub-domains');
-/*"serand": [
-    "async",
-    "dust",
-    "serand",
-    "breadcrumb",
-    "navigation",
-    "hub-navigation",
-    "hub-drones",
-    "hub-domains",
-    "hub-configs",
-    "hub-servers",
-    "hub-self",
-    "hub-agent",
-    "hub-server-details",
-    "upload",
-    "user-login",
-    "user-register"
-],*/
 
 var user;
 
@@ -43,7 +24,7 @@ page('/login', function (ctx) {
         .render();
 });
 
-pager('*', function (ctx, next) {
+page('*', function (ctx, next) {
     user ? next() : redirect('/login');
 });
 
@@ -184,8 +165,6 @@ page('/configs/:id', function (ctx) {
         .render();
 });
 
-pager();
-
 serand.on('user', 'logged in', function (data) {
     user = data;
     var ctx = current('/:action?val=?');
@@ -198,4 +177,4 @@ serand.on('user', 'logged out', function (data) {
     redirect('/');
 });
 
-serand.emit('boot', 'init');
+serand.emit('serand', 'ready');
