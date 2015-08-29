@@ -6,6 +6,7 @@ var redirect = serand.redirect;
 var current = serand.current;
 var layout = serand.layout('serandomps~hub@master');
 
+require('user');
 require('hub-agent');
 require('hub-domains');
 
@@ -15,7 +16,7 @@ var user;
 require('upload');
 //init app
 
-page('/login', function (ctx) {
+page('/signin', function (ctx) {
     layout('one-column')
         .area('#header')
         .add('hub-navigation')
@@ -25,7 +26,7 @@ page('/login', function (ctx) {
 });
 
 page('*', function (ctx, next) {
-    user ? next() : redirect('/login');
+    user ? next() : redirect('/signin');
 });
 
 page('/', function (ctx) {
