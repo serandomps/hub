@@ -4,17 +4,13 @@ var serand = require('serand');
 var page = serand.page;
 var redirect = serand.redirect;
 var current = serand.current;
-var layout = serand.layout('serandomps~hub@master');
 
-require('user');
-require('hub-agent');
-require('hub-domains');
+var app = serand.boot('serandomps~hub@master');
+var layout = serand.layout(app);
 
 var user;
 
-//registering jquery, bootstrap etc. plugins
-require('upload');
-//init app
+var dest;
 
 page('/signin', function (ctx) {
     layout('one-column')
@@ -166,11 +162,18 @@ page('/configs/:id', function (ctx) {
         .render();
 });
 
-serand.on('user', 'logged in', function (data) {
-    user = data;
-    var ctx = current('/:action?val=?');
-    console.log(ctx);
-    redirect('/servers');
+serand.on('user', 'login', function (path) {
+    dest = path;
+    redirect('/signin');
+});
+
+serand.on('user', 'ready', function (usr) {
+    user = usr;
+});
+
+serand.on('user', 'logged in', function (usr) {
+    user = usr;
+    redirect(dest || '/servers');
 });
 
 serand.on('user', 'logged out', function (data) {
