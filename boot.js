@@ -17,7 +17,7 @@ page('/signin', function (ctx) {
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
-        .add('accounts-signin')
+        .add('accounts-signin', {})
         .render();
 });
 
