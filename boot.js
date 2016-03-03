@@ -8,16 +8,18 @@ var current = serand.current;
 var app = serand.boot('serandomps~hub@master');
 var layout = serand.layout(app);
 
+var signin = require('./controllers/signin');
+
 var user;
 
 var dest;
 
-page('/signin', function (ctx) {
+page('/signin', signin.prepare, function (ctx) {
     layout('one-column')
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
-        .add('accounts-signin', {})
+        .add('accounts-signin', ctx.options)
         .render();
 });
 
