@@ -1,0 +1,10 @@
+{
+    "name": "navigation",
+    "description": "navigation component",
+    "scripts": ["index.js"],
+    "main": "index.js",
+    "locals": [
+        "dust",
+        "serand"
+    ]
+}

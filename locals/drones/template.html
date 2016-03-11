@@ -1,0 +1,32 @@
+<div class="hub-drones row">
+    <div class="col-md-12">
+        <h4>{domain}</h4>
+        <table class="table table-bordered table-striped">
+            <colgroup>
+                <col class="col-xs-1">
+                <col class="col-xs-7">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>Drone</th>
+                <th>Controls</th>
+            </tr>
+            </thead>
+            <tbody>
+            {#drones}
+            <tr>
+                <td>
+                    <code>{ip}:{port}</code>
+                </td>
+                <td>
+                    <div data-id="{id}">
+                        <button type="button" class="btn btn-info">Info</button>
+                        <button type="button" class="btn btn-danger stop">Stop</button>
+                    </div>
+                </td>
+            </tr>
+            {/drones}
+            </tbody>
+        </table>
+    </div>
+</div>

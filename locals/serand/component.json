@@ -1,0 +1,19 @@
+{
+    "name": "serand",
+    "description": "serand component",
+    "dependencies": {
+        "visionmedia/page.js": "*",
+        "tj/node-querystring": "*"
+    },
+    "locals": [
+        "dust",
+        "serand"
+    ],
+    "scripts": [
+        "layout.js",
+        "index.js",
+        "utils.js"
+    ],
+    "templates": [],
+    "main": "index.js"
+}

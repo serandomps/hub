@@ -1,0 +1,12 @@
+{
+    "name": "configs",
+    "description": "configs component",
+    "scripts": ["index.js"],
+    "styles": ["styles.css"],
+    "main": "index.js",
+    "templates": ["template.html", "list.html", "add.html", "details.html"],
+    "locals": [
+        "dust",
+        "serand"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "servers",
+    "description": "servers component",
+    "scripts": ["index.js"],
+    "styles": ["styles.css"],
+    "main": "index.js",
+    "templates": ["template.html"],
+    "locals": [
+        "dust",
+        "serand"
+    ]
+}
