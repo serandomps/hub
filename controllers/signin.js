@@ -1,6 +1,11 @@
-var utils = require('utils');
+var utils = require('hub-utils');
+var serand = require('serand');
 
 var clientId;
+
+var pending;
+
+var ready = false;
 
 module.exports.prepare = function (ctx, next) {
   if (clientId) {
@@ -9,11 +14,28 @@ module.exports.prepare = function (ctx, next) {
     };
     return next();
   }
-  utils.boot(function (err, config) {
-    clientId = config.clientId;
+  utils.configs('boot', function (err, config) {
+    console.log(config);
+    var clients = config.clients;
+    clientId = clients.serandives;
     ctx.options = {
       clientId: clientId
     };
     next();
   });
 };
+
+module.exports.ready = function (ctx, next) {
+  if (ready) {
+    return next();
+  }
+  pending = next;
+};
+
+serand.on('user', 'ready', function (usr) {
+  ready = true;
+  if (!pending) {
+    return;
+  }
+  setTimeout(pending, 0);
+});

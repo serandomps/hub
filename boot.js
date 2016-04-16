@@ -19,11 +19,11 @@ page('/signin', signin.prepare, function (ctx) {
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
-        .add('accounts-signin', ctx.options)
+        .add('hub-signin', ctx.options)
         .render();
 });
 
-page('*', function (ctx, next) {
+page('*', signin.ready, function (ctx, next) {
     user ? next() : redirect('/signin');
 });
 
@@ -126,7 +126,7 @@ page('/add', function (ctx) {
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
-        .add('auto-add')
+        .add('hub-auto-add')
         .render();
 });
 
@@ -158,6 +158,40 @@ page('/configs/:id', function (ctx) {
         .add('hub-navigation')
         .area('#middle')
         .add('hub-configs', {
+            action: 'details',
+            id: ctx.params.id
+        })
+        .render();
+});
+
+page('/serand/configs', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-serand-configs', {
+            action: 'list'
+        })
+        .render();
+});
+
+page('/serand/configs/add', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-serand-configs', {
+            action: 'add'
+        })
+        .render();
+});
+
+page('/serand/configs/:id', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-serand-configs', {
             action: 'details',
             id: ctx.params.id
         })
