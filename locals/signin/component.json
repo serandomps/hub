@@ -1,9 +1,0 @@
-{
-    "name": "signin",
-    "description": "signin component",
-    "scripts": ["index.js"],
-    "styles": ["styles.css"],
-    "templates": ["template.html"],
-    "main": "index.js",
-    "locals": ["dust", "serand", "utils"]
-}

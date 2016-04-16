@@ -1,9 +1,0 @@
-{
-    "name": "breadcrumb",
-    "description": "breadcrumb component",
-    "styles": ["styles.css"],
-    "scripts": ["index.js"],
-    "templates": ["template.html"],
-    "main": "index.js",
-    "locals": ["dust", "serand"]
-}

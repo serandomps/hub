@@ -1,9 +1,0 @@
-{
-    "name": "agent",
-    "description": "agent component",
-    "scripts": ["index.js"],
-    "main": "index.js",
-    "locals": [
-        "serand"
-    ]
-}

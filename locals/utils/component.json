@@ -1,7 +1,0 @@
-{
-    "name": "utils",
-    "description": "utils component",
-    "scripts": ["index.js", "permissions.js"],
-    "main": "index.js",
-    "locals": ["serand"]
-}
