@@ -121,6 +121,40 @@ page('/domains/:id/drones', function (ctx) {
         .render();
 });
 
+page('/apps', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-apps', {
+            action: 'list'
+        })
+        .render();
+});
+
+page('/apps/add', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-apps', {
+            action: 'add'
+        })
+        .render();
+});
+
+page('/apps/:id', function (ctx) {
+    layout('one-column')
+        .area('#header')
+        .add('hub-navigation')
+        .area('#middle')
+        .add('hub-apps', {
+            action: 'details',
+            id: ctx.params.id
+        })
+        .render();
+});
+
 page('/add', function (ctx) {
     layout('one-column')
         .area('#header')
