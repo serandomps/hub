@@ -53,11 +53,11 @@ require.helper.semVerSort = function(a, b) {
 
 /**
  * Find and require a module which name starts with the provided name.
- * If multiple modules exists, the highest semver is used. 
+ * If multiple modules exists, the highest semver is used.
  * This function can only be used for remote dependencies.
 
  * @param {String} name - module name: `user~repo`
- * @param {Boolean} returnPath - returns the canonical require path if true, 
+ * @param {Boolean} returnPath - returns the canonical require path if true,
  *                               otherwise it returns the epxorted module
  */
 require.latest = function (name, returnPath) {
@@ -80,7 +80,7 @@ require.latest = function (name, returnPath) {
           semVerCandidates.push({version: version, name: moduleName});
         } else {
           otherCandidates.push({version: version, name: moduleName});
-        } 
+        }
     }
   }
   if (semVerCandidates.concat(otherCandidates).length === 0) {
@@ -1248,10 +1248,10 @@ function promote(parent, key) {
 
 function parse(parts, parent, key, val) {
   var part = parts.shift();
-  
+
   // illegal
   if (Object.getOwnPropertyDescriptor(Object.prototype, key)) return;
-  
+
   // end
   if (!part) {
     if (isArray(parent[key])) {
@@ -7827,7 +7827,7 @@ page('/add', function (ctx) {
         .area('#header')
         .add('navigation')
         .area('#middle')
-        .add('auto-add')
+        .add('autos-add')
         .render();
 });
 
