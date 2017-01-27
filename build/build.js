@@ -7827,7 +7827,7 @@ page('/add', function (ctx) {
         .area('#header')
         .add('navigation')
         .area('#middle')
-        .add('autos-add')
+        .add('vehicles-add')
         .render();
 });
 
