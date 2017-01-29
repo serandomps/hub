@@ -160,7 +160,7 @@ page('/add', function (ctx) {
         .area('#header')
         .add('hub-navigation')
         .area('#middle')
-        .add('hub-vehicles-add')
+        .add('hub-vehicles-create')
         .render();
 });
 
